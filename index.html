@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#05030d">
+  <meta name="description" content="一个像素风格的互动烟花小站。轻触夜空，点亮属于你的烟花。">
+  <title>像素烟花 · Pixel Fireworks</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="sky" role="img" aria-label="像素风格的夏日夜空，星星和烟花在发光。轻触或点击夜空可以绽放一朵烟花。"></canvas>
+
+  <div class="fx-vignette" aria-hidden="true"></div>
+  <div class="fx-scanlines" aria-hidden="true"></div>
+
+  <main class="hud">
+    <div class="topbar">
+      <header class="brand">
+        <span class="brand__spark" aria-hidden="true">✦</span>
+        <div>
+          <p class="brand__eyebrow">MIDNIGHT ARCADE</p>
+          <h1>像素烟花<span>PIXEL FIREWORKS</span></h1>
+        </div>
+      </header>
+
+      <div class="controls" role="group" aria-label="页面控制">
+        <button class="chip" id="sound" type="button" aria-pressed="false" title="开启或关闭烟花音效">
+          <span class="chip__icon" aria-hidden="true">♪</span>
+          <span class="chip__label">音效</span>
+          <span class="chip__state" id="sound-state">关闭</span>
+        </button>
+        <button class="chip" id="pause" type="button" aria-pressed="false" title="暂停或继续烟花">
+          <span class="chip__icon chip__icon--pause" aria-hidden="true">Ⅱ</span>
+          <span class="chip__label" id="pause-label">暂停</span>
+        </button>
+      </div>
+    </div>
+
+    <p class="tip" id="tip">
+      <span class="tip__dot" aria-hidden="true"></span>
+      <span>轻触夜空，点亮一朵烟花</span>
+      <span class="tip__key" aria-hidden="true">SPACE 暂停</span>
+    </p>
+
+    <div class="paused-card" id="paused-card" aria-hidden="true">
+      <span class="paused-card__bars">Ⅱ</span>
+      <span>烟花暂停</span>
+    </div>
+  </main>
+
+  <noscript>
+    <p class="noscript">需要开启 JavaScript，烟花才会亮起来。</p>
+  </noscript>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
